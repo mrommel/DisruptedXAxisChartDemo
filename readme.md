@@ -1,6 +1,6 @@
 ## Sample project to show a disrupted xaxis
 
-[![ScreenShot](https://github.com/mrommel/DisruptedXAxisChartDemo/blob/master/Screenshots/Chart_with_disrupted_xaxis.png)]
+[![ScreenShot](https://github.com/mrommel/DisruptedXAxisChartDemo/raw/main/Screenshots/Chart_with_disrupted_xaxis.png)]
 
 <code>
 class LatencyXAxisRenderer: XAxisRenderer {
