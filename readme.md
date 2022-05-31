@@ -2,7 +2,7 @@
 
 ![ScreenShot](https://github.com/mrommel/DisruptedXAxisChartDemo/raw/main/Screenshots/Chart_with_disrupted_xaxis.png)
 
-<code>
+```
 class LatencyXAxisRenderer: XAxisRenderer {
 
     private var axisLineSegmentsBuffer = [CGPoint](repeating: .zero, count: 2)
@@ -39,4 +39,4 @@ class LatencyXAxisRenderer: XAxisRenderer {
         }
     }
 }
-</code>
+```
