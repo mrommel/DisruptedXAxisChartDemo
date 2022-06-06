@@ -13,7 +13,7 @@
 		C98503912845EF690074A025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C98503902845EF690074A025 /* Assets.xcassets */; };
 		C98503942845EF690074A025 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C98503932845EF690074A025 /* Preview Assets.xcassets */; };
 		C985039C2845F1590074A025 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = C985039B2845F1590074A025 /* Charts */; };
-		C985039E2845F1AE0074A025 /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985039D2845F1AD0074A025 /* BarChart.swift */; };
+		C985039E2845F1AE0074A025 /* LatencyBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = C985039D2845F1AD0074A025 /* LatencyBarChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		C985038E2845EF620074A025 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C98503902845EF690074A025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C98503932845EF690074A025 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C985039D2845F1AD0074A025 /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
+		C985039D2845F1AD0074A025 /* LatencyBarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatencyBarChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 				C985038E2845EF620074A025 /* ContentView.swift */,
 				C98503902845EF690074A025 /* Assets.xcassets */,
 				C98503922845EF690074A025 /* Preview Content */,
-				C985039D2845F1AD0074A025 /* BarChart.swift */,
+				C985039D2845F1AD0074A025 /* LatencyBarChart.swift */,
 			);
 			path = DisruptedXAxisChartDemo;
 			sourceTree = "<group>";
@@ -154,7 +154,7 @@
 			files = (
 				C985038F2845EF620074A025 /* ContentView.swift in Sources */,
 				C985038D2845EF620074A025 /* DisruptedXAxisChartDemoApp.swift in Sources */,
-				C985039E2845F1AE0074A025 /* BarChart.swift in Sources */,
+				C985039E2845F1AE0074A025 /* LatencyBarChart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

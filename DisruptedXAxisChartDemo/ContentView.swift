@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
 
         VStack {
-            BarChart(entries: [
+            LatencyBarChart(entries: [
                 BarChartDataEntry(x: 1, y: 0),
                 BarChartDataEntry(x: 2, y: 2),
                 BarChartDataEntry(x: 3, y: 7),
