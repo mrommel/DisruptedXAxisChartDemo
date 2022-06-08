@@ -9,7 +9,15 @@ class LatencyXAxisRenderer: XAxisRenderer {
 
     override func renderAxisLine(context: CGContext) {
 
-        super.renderAxisLine(context: context)
+        guard
+            axis.isEnabled,
+            axis.isDrawAxisLineEnabled
+        else { return }
+
+        guard axis.labelPosition == .bottom
+                || axis.labelPosition == .bottomInside
+                || axis.labelPosition == .bothSided
+        else { return }
 
         context.saveGState()
         defer { context.restoreGState() }
@@ -22,21 +30,43 @@ class LatencyXAxisRenderer: XAxisRenderer {
             context.setLineDash(phase: 0.0, lengths: [])
         }
 
-        if axis.labelPosition == .bottom
-            || axis.labelPosition == .bottomInside
-            || axis.labelPosition == .bothSided {
-            axisLineSegmentsBuffer[0].x = viewPortHandler.contentRight - 20
-            axisLineSegmentsBuffer[0].y = viewPortHandler.contentBottom + 4
-            axisLineSegmentsBuffer[1].x = viewPortHandler.contentRight - 12
-            axisLineSegmentsBuffer[1].y = viewPortHandler.contentBottom - 4
-            context.strokeLineSegments(between: axisLineSegmentsBuffer)
+        let leftSplit = viewPortHandler.contentRight - 15
+        let rightSplit = viewPortHandler.contentRight - 12
 
-            axisLineSegmentsBuffer[0].x = viewPortHandler.contentRight - 16
-            axisLineSegmentsBuffer[0].y = viewPortHandler.contentBottom + 4
-            axisLineSegmentsBuffer[1].x = viewPortHandler.contentRight - 8
-            axisLineSegmentsBuffer[1].y = viewPortHandler.contentBottom - 4
-            context.strokeLineSegments(between: axisLineSegmentsBuffer)
+        axisLineSegmentsBuffer[0].x = viewPortHandler.contentLeft
+        axisLineSegmentsBuffer[0].y = viewPortHandler.contentBottom
+        axisLineSegmentsBuffer[1].x = leftSplit
+        axisLineSegmentsBuffer[1].y = viewPortHandler.contentBottom
+        context.strokeLineSegments(between: axisLineSegmentsBuffer)
+
+        axisLineSegmentsBuffer[0].x = rightSplit
+        axisLineSegmentsBuffer[0].y = viewPortHandler.contentBottom
+        axisLineSegmentsBuffer[1].x = viewPortHandler.contentRight
+        axisLineSegmentsBuffer[1].y = viewPortHandler.contentBottom
+        context.strokeLineSegments(between: axisLineSegmentsBuffer)
+
+        context.saveGState()
+        defer { context.restoreGState() }
+
+        context.setStrokeColor(axis.axisLineColor.cgColor)
+        context.setLineWidth(axis.axisLineWidth)
+        if axis.axisLineDashLengths != nil {
+            context.setLineDash(phase: axis.axisLineDashPhase, lengths: axis.axisLineDashLengths)
+        } else {
+            context.setLineDash(phase: 0.0, lengths: [])
         }
+
+        axisLineSegmentsBuffer[0].x = leftSplit - 2
+        axisLineSegmentsBuffer[0].y = viewPortHandler.contentBottom + 4
+        axisLineSegmentsBuffer[1].x = leftSplit + 2
+        axisLineSegmentsBuffer[1].y = viewPortHandler.contentBottom - 4
+        context.strokeLineSegments(between: axisLineSegmentsBuffer)
+
+        axisLineSegmentsBuffer[0].x = rightSplit - 2
+        axisLineSegmentsBuffer[0].y = viewPortHandler.contentBottom + 4
+        axisLineSegmentsBuffer[1].x = rightSplit + 2
+        axisLineSegmentsBuffer[1].y = viewPortHandler.contentBottom - 4
+        context.strokeLineSegments(between: axisLineSegmentsBuffer)
     }
 }
 ```
